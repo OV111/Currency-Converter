@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@keyframes background {
+    0% {
+        box-shadow: 0 0 12px aqua;
+    }
+    25%{
+       box-shadow: 0 0 12px aquamarine;
+    }
+    50% {
+        box-shadow: 0 0 12px #3c5ba2;
+    }
+    75%{
+        box-shadow: 0 0 12px #2c4683;
+    }
+    100% {
+       box-shadow: 0 0 12px #182848;
+    }
+}
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    background: linear-gradient(90deg, #3c5ba2 0%, #182848 100%);
+}
+.container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: 150px 500px;
+    width: 100%;
+    max-width: 450px;
+    height: 100vh;
+    max-height: 400px;
+    border: 1px solid #000;
+    outline: none;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(54, 47, 47, 0.2);
+    animation: background 5s infinite alternate ease-in-out;
+}
+.amount {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    border: 2px solid #000;
+    border-radius: 8px;
+    outline: none;
+}
