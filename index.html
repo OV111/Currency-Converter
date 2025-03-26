@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="icon" href="currency.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <h2>Currency Converter</h2>
+        <section class="amount">
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" value="" min="0">
+        </section>
+
+        <section class="fromto">
+            <div class="from">
+                <label for="from">From</label>
+                <select name="" id="from">
+
+                </select>
+                <span id="from-flag" class="flag"></span>
+            </div>
+
+            <button id="change"><img src="two-arrows.png" alt="Change Currency" width="30" height="30"></button>
+           
+            <div>
+                <label for="to">To</label>
+                <select name="" id="to">
+
+                </select>
+                <span id="to-flag" class="flag"></span>
+            </div>
+        </section>
+
+        <footer class="convert">
+            <div class="rate-info">
+                <span>Converted Amount</span>
+                <span id="rate-value">0.92 EUR</span>
+            </div>
+            <div class="rate-text">
+                <span id="rate-text">1 USD = 0.9200 EUR</span>
+            </div>
+            <button id="convert">Convert</button>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
