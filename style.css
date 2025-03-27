@@ -47,7 +47,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 0px 20px;
+    /* padding: 0px 20px; */
     color: #fff;
     text-shadow: 0 0 3px #fff;
     font-size: 18px;
@@ -56,11 +56,11 @@ body {
     gap: 10px;
 }
 .amount input {
-    width: 350px;
+    width: 370px;
     height: 40px;
     border: none;
     outline: none;
-    padding: 0px 10px 0px;
+    /* padding: 0px 0px 0px; */
     border-radius: 6px;
     font-size: 20px;
     box-shadow: 0 0 18px rgb(62, 59, 59);
@@ -69,13 +69,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4px;
+    gap: 14px;
 }
 .from {
     display: grid;
     justify-content: center;
     align-items: center;
     gap: 6px;
+    color: #fff;
+    text-shadow: 0 0 3px #fff;
 }
 .from #from {
     width: 150px;
@@ -83,6 +85,7 @@ body {
     border: none;
     outline: none;
     border-radius: 6px;
+    cursor: pointer;
 }
 #change {
     border: none;
@@ -92,13 +95,20 @@ body {
     background-color: #fff;
     cursor: pointer;
     box-shadow: 0 0 18px rgb(62, 59, 59);
-    margin: 10px 0px;
+    margin-top: 24px;
+}
+#change:hover {
+    transform: scale(1.03);
+    transition: 1s;
+    box-shadow: 0 0 8px rgb(164, 152, 152), 0 0 8px rgb(62, 59, 59), 0 0 8px rgb(62, 59, 59);
 }
 .to {
     display: grid;
     align-items: center;
     justify-content: center;
     gap: 6px;
+    color: #fff;
+    text-shadow: 0 0 3px #fff;
 }
 .to #to {
     width: 150px;
@@ -106,4 +116,5 @@ body {
     border: none;
     outline: none;
     border-radius: 6px;
+    cursor: pointer;
 }
