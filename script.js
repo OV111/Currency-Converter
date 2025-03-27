@@ -2,6 +2,8 @@ const amount = document.getElementById("amount");
 const from = document.getElementById("from");
 const changeBtn = document.getElementById("change");
 const to = document.getElementById("to");
+const rateValue = document.getElementById("rate-value");
+const rateText = document.getElementById("rate-text");
 const convertBtn = document.getElementById("convert");
 
 
