@@ -36,11 +36,74 @@ body {
     box-shadow: 0 0 15px rgba(54, 47, 47, 0.2);
     animation: changeBackground 3s infinite linear;
 }
+.container h2 {
+    font-size: 34px;
+    padding: 0px;
+    color: #fff;
+    padding: 0px 40px;
+}
 .amount {
+    display: grid;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    padding: 10px;
-    font-size: 20px;
-    border: 2px solid #000;
-    border-radius: 8px;
+    padding: 0px 20px;
+    color: #fff;
+    text-shadow: 0 0 3px #fff;
+    font-size: 18px;
+    border: none;
     outline: none;
+    gap: 10px;
+}
+.amount input {
+    width: 350px;
+    height: 40px;
+    border: none;
+    outline: none;
+    padding: 0px 10px 0px;
+    border-radius: 6px;
+    font-size: 20px;
+    box-shadow: 0 0 18px rgb(62, 59, 59);
+}
+.fromto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+.from {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+.from #from {
+    width: 150px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+}
+#change {
+    border: none;
+    border-radius: 6px;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 18px rgb(62, 59, 59);
+    margin: 10px 0px;
+}
+.to {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+.to #to {
+    width: 150px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
 }
