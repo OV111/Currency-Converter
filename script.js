@@ -1,9 +1,10 @@
-// import { fetchCurrencyData } from "./currscript.js";
 const amount = document.getElementById("amount");
 const from = document.getElementById("from");
 const changeBtn = document.getElementById("change");
 const to = document.getElementById("to");
 const rateValue = document.getElementById("rate-value");
+const rateCurr = document.getElementById("rate-curr");
+
 const rateText = document.getElementById("rate-text");
 const convertBtn = document.getElementById("convert");
 
@@ -34,18 +35,50 @@ const populateCurrency = (rateEntries) => {
     rateEntries.forEach((key) => {
         const optionFrom = document.createElement("option");
         const optionTo = document.createElement("option");
-        
         optionFrom.text = key[0];
         optionFrom.value = key[1];
         from.appendChild(optionFrom);
+
         optionTo.text = key[0];
         optionTo.value = key[1];
         to.appendChild(optionTo);
     });
-}
+};
 changeBtn.addEventListener("click", () => {
     [from.value,to.value] = [to.value,from.value];
+    convertBtn.addEventListener("click", calcRate());
+});
+
+const calcRate = () => {
+    const amountValue = amount.value;
+    const fromCurrency = from.value; 
+    const toCurrency = to.value;
+
+
+    console.log(from[0].textContent);
+    // console.log(amountValue)
+    // console.log(amountValue * toCurrency);
+
+    // console.log(amountValue);    
+    displayRate();
+};
+
+
+const displayRate = () => {
+    const finalRateValue = rateValue.textContent;
+    const finalRateCurr = rateCurr.textContent;
+    rateValue.textContent = "";
+    rateCurr.textContent = "";
+    rateValue.textContent = `${finalRateValue}`;
+    rateCurr.textContent = `${finalRateCurr}`;  
+};
+
+convertBtn.addEventListener("click", () => {
+    calcRate();
 })
 
-api();
 
+
+
+
+api();
