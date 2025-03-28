@@ -61,7 +61,7 @@ body {
     height: 40px;
     border: none;
     outline: none;
-    /* padding: 0px 0px 0px; */
+    padding: 0px 10px 0px;
     border-radius: 6px;
     font-size: 20px;
     box-shadow: 0 0 18px rgb(62, 59, 59);
@@ -124,18 +124,31 @@ body {
     justify-content: space-between;
 }
 .rate-info {
-    display: grid;
+    display: flex;
     justify-content: start;
     align-items: center;
     gap: 6px;
     color: #fff;
     text-shadow: 0 0 3px #fff;
+    margin-top: 30px;
     margin-left: 20px;
+}
+#convert-amount-text {
+    font-size: 18px;
+    color: #fff;
+    text-shadow: 0 0 3px #fff;
+    margin: 20px;
+    position: absolute;
+    top: 390px;
+    margin-right: 20px;
 }
 #rate-value {
     font-size: 30px;
     font-weight: 600;
-    /* color: burlywood; */
+}
+#rate-curr {
+    font-size: 30px;
+    font-weight: 600;
 }
 #rate-text {
     font-size: 18px;
