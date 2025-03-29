@@ -156,6 +156,7 @@ body {
     margin: 20px;
     position: absolute;
     right: 515px;
+    top: 390px;
     margin-right: 20px;
 }
 #convert {
@@ -179,3 +180,12 @@ body {
     transition: 1s;
     box-shadow: 0 0 8px rgb(164, 152, 152), 0 0 8px rgb(62, 59, 59), 0 0 8px rgb(62, 59, 59);
 }
+/* #loading {
+    position: absolute;
+    top: 440px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #fff;
+    text-shadow: 0 0 3px #fff;
+} */
