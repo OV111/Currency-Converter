@@ -2,13 +2,13 @@ const amount = document.getElementById("amount");
 const from = document.getElementById("from");
 const changeBtn = document.getElementById("change");
 const to = document.getElementById("to");
-const rateValue = document.getElementById("rate-value");
-const rateCurr = document.getElementById("rate-curr");
+let rateValue = document.getElementById("rate-value");
+let rateCurr = document.getElementById("rate-curr");
 
 const rateText = document.getElementById("rate-text");
 const convertBtn = document.getElementById("convert");
 
-
+let exchange_rates = {};
 let apiKey = "4e6297c2a1106ed9038cce83";
 
 async function api() {
@@ -16,7 +16,8 @@ async function api() {
         const response = await fetch(`https://v6.exchangerate-api.com/v6/4e6297c2a1106ed9038cce83/latest/USD`);
         if(response.status === 200) {
             const data = await response.json();
-            console.log(data)
+            // console.log(data);
+            exchange_rates = data.conversion_rates;
             const rateEntries = Object.entries(data.conversion_rates);        
             populateCurrency(rateEntries);
         } else if(response.status === 400) {
@@ -35,6 +36,7 @@ const populateCurrency = (rateEntries) => {
     rateEntries.forEach((key) => {
         const optionFrom = document.createElement("option");
         const optionTo = document.createElement("option");
+
         optionFrom.text = key[0];
         optionFrom.value = key[1];
         from.appendChild(optionFrom);
@@ -48,37 +50,24 @@ changeBtn.addEventListener("click", () => {
     [from.value,to.value] = [to.value,from.value];
     convertBtn.addEventListener("click", calcRate());
 });
-
 const calcRate = () => {
     const amountValue = amount.value;
-    const fromCurrency = from.value; 
-    const toCurrency = to.value;
-
-
-    console.log(from[0].textContent);
-    // console.log(amountValue)
-    // console.log(amountValue * toCurrency);
-
-    // console.log(amountValue);    
-    displayRate();
+    const fromCurrencyValue = from.value; 
+    const toCurrencyValue = to.value;
+    const toCurrencyText = to.options[to.selectedIndex].text;
+    const fromRate = Number(fromCurrencyValue);
+    const toRate = Number(toCurrencyValue);
+    if(!amountValue) {
+        console.log("Enter valid number!");
+        return ;
+    }
+    const result = (amountValue / fromRate) * toRate;        
+    displayRate(result,toCurrencyText);
+};
+const displayRate = (result,text) => {
+    rateValue.textContent = result.toFixed(2);
+    rateCurr.textContent = text;
 };
 
-
-const displayRate = () => {
-    const finalRateValue = rateValue.textContent;
-    const finalRateCurr = rateCurr.textContent;
-    rateValue.textContent = "";
-    rateCurr.textContent = "";
-    rateValue.textContent = `${finalRateValue}`;
-    rateCurr.textContent = `${finalRateCurr}`;  
-};
-
-convertBtn.addEventListener("click", () => {
-    calcRate();
-})
-
-
-
-
-
+convertBtn.addEventListener("click", calcRate);
 api();
