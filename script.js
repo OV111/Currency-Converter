@@ -33,7 +33,6 @@ async function api() {
     //     loadingIndicator.style.display = "none";
     // }
 }
-
 const populateCurrency = (rateEntries) => {
     rateEntries.forEach((key) => {
         const optionFrom = document.createElement("option");
