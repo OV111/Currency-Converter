@@ -12,10 +12,10 @@ const apiKey = "4e6297c2a1106ed9038cce83";
 
 async function api() {
     try {
+        // loadingIndicator.style.display = "block";
         const response = await fetch(`https://v6.exchangerate-api.com/v6/4e6297c2a1106ed9038cce83/latest/USD`);
         if(response.status === 200) {
-            const data = await response.json();
-            // console.log(data);
+            const data = await response.json(); // console.log(data);
             exchange_rates = data.conversion_rates;
             const rateEntries = Object.entries(data.conversion_rates);        
             populateCurrency(rateEntries);
@@ -28,7 +28,10 @@ async function api() {
         }
     } catch(error) {
         console.error("Error fetching data!",error);
-    }
+    } 
+    // finally {
+    //     loadingIndicator.style.display = "none";
+    // }
 }
 
 const populateCurrency = (rateEntries) => {
@@ -67,7 +70,7 @@ const calcRate = () => {
 const displayRate = (convertedAmount,toCurrency,fromCurrency,toRate) => {
     rateValue.textContent = convertedAmount.toFixed(2);
     rateCurr.textContent = toCurrency;
-    console.log(rateText.textContent = `1 ${fromCurrency} = ${toRate.toFixed(2)} ${toCurrency} `);
+    rateText.textContent = `1 ${fromCurrency} = ${toRate.toFixed(2)} ${toCurrency} `;
 };
 
 convertBtn.addEventListener("click", calcRate);
