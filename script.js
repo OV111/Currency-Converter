@@ -2,14 +2,13 @@ const amount = document.getElementById("amount");
 const from = document.getElementById("from");
 const changeBtn = document.getElementById("change");
 const to = document.getElementById("to");
-let rateValue = document.getElementById("rate-value");
-let rateCurr = document.getElementById("rate-curr");
-
+const rateValue = document.getElementById("rate-value");
+const rateCurr = document.getElementById("rate-curr");
 const rateText = document.getElementById("rate-text");
 const convertBtn = document.getElementById("convert");
 
 let exchange_rates = {};
-let apiKey = "4e6297c2a1106ed9038cce83";
+const apiKey = "4e6297c2a1106ed9038cce83";
 
 async function api() {
     try {
@@ -54,6 +53,7 @@ const calcRate = () => {
     const amountValue = amount.value;
     const fromCurrencyValue = from.value; 
     const toCurrencyValue = to.value;
+    const fromCurrencyText = from.options[from.selectedIndex].text;
     const toCurrencyText = to.options[to.selectedIndex].text;
     const fromRate = Number(fromCurrencyValue);
     const toRate = Number(toCurrencyValue);
@@ -62,11 +62,12 @@ const calcRate = () => {
         return ;
     }
     const result = (amountValue / fromRate) * toRate;        
-    displayRate(result,toCurrencyText);
+    displayRate(result,toCurrencyText,fromCurrencyText,toRate);
 };
-const displayRate = (result,text) => {
-    rateValue.textContent = result.toFixed(2);
-    rateCurr.textContent = text;
+const displayRate = (convertedAmount,toCurrency,fromCurrency,toRate) => {
+    rateValue.textContent = convertedAmount.toFixed(2);
+    rateCurr.textContent = toCurrency;
+    console.log(rateText.textContent = `1 ${fromCurrency} = ${toRate.toFixed(2)} ${toCurrency} `);
 };
 
 convertBtn.addEventListener("click", calcRate);
