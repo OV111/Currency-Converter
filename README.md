@@ -14,4 +14,4 @@ This currency converter utilizes a real-time currency conversion API to fetch th
     cd Currency-Converter
 ```
 ## View Live Demo
-![Image](https://github.com/user-attachments/assets/1975f280-39fd-460e-aca1-3e0e9f5ba4a2)
+![Image](https://github.com/user-attachments/assets/40d3e28e-62c4-42d3-bc15-6c7a18720cdb)
